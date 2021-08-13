@@ -1,6 +1,9 @@
 # TUTORIAL
 
+Create a GO REST API with MySQL and deploy on Docker Image
+
 ## Create project and dependencies
+
 ```bash
 mkdir rest-go-demo && cd rest-go-demo
 go mod init rest-go-demo
@@ -29,19 +32,19 @@ docker run -d --rm --name mysql -p 3306:3306 --network=rest-go-demo-net -e MYSQL
 
 ## Run the project
 
-```
+```bash
 go run main.go
 ```
 
 ## Compile the executable
 
-```
+```bash
 go build -a -o demo main.go
 ```
 
 ## Run the app
 
-```
+```bash
 ./demo
 ```
 
@@ -51,3 +54,7 @@ go build -a -o demo main.go
 docker build -t rest-go-demo .
 docker run --rm -it -p 8080:8080 --network=rest-go-demo-net -e MYSQL_HOST=mysql rest-go-demo
 ```
+
+## Testing using Postman Collection
+
+Import collections on testing/rest-go-demo.postman_collection.json
