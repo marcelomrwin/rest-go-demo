@@ -9,6 +9,7 @@ import (
 
 	"github.com/gorilla/mux"
 	_ "github.com/jinzhu/gorm/dialects/mysql" //Required for MySQL dialect
+	"gitlab.com/avarf/getenvs"
 )
 
 func main() {
@@ -31,10 +32,10 @@ func initHandlers(router *mux.Router) {
 func initDB() {
 	config :=
 		database.Config{
-			ServerName: "localhost:3306",
-			User:       "demo",
-			Password:   "demo",
-			DB:         "demo",
+			ServerName: getenvs.GetEnvString("MYSQL_HOST", "localhost") + ":3306",
+			User:       getenvs.GetEnvString("MYSQL_USER", "demo"),
+			Password:   getenvs.GetEnvString("MYSQL_PASSWD", "demo"),
+			DB:         getenvs.GetEnvString("MYSQL_DB", "demo"),
 		}
 
 	connectionString := database.GetConnectionString(config)

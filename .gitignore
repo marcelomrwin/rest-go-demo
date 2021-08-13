@@ -2,7 +2,7 @@
 # Created by https://www.toptal.com/developers/gitignore/api/osx,java,maven,eclipse,intellij,go,visualstudiocode,visualstudio,git,jenv
 # Edit at https://www.toptal.com/developers/gitignore?templates=osx,java,maven,eclipse,intellij,go,visualstudiocode,visualstudio,git,jenv
 
-rest-go-demo
+demo
 db
 
 ### Eclipse ###
